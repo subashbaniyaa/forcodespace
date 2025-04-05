@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>forcodespace</title>
+  <title>forcodespace - Web Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Subash Baniya – A passionate developer creating innovative web solutions, including APIs and text-to-image services." />
   <meta name="author" content="Subash Baniya" />
@@ -13,7 +13,9 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="https://i.imgur.com/9GGNGm1.jpeg" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preload" href="forcodespace.mp3" as="audio" />
 
   <style>
     :root {
@@ -23,6 +25,15 @@
       --text-dark: #f1f1f1;
       --accent: #6366f1;
       --shadow: rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --section-spacing: 2rem;
+      --element-spacing: 1rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
@@ -30,23 +41,30 @@
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg-light);
       color: var(--text-light);
-      transition: all 0.3s ease;
-      background-image: linear-gradient(135deg, rgba(240,240,240,0.2) 25%, transparent 25%),
-                        linear-gradient(225deg, rgba(240,240,240,0.2) 25%, transparent 25%);
+      transition: var(--transition);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      line-height: 1.6;
+      background-image: 
+        linear-gradient(135deg, rgba(240,240,240,0.2) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(240,240,240,0.2) 25%, transparent 25%);
       background-size: 40px 40px;
     }
 
     body.dark {
       background-color: var(--bg-dark);
       color: var(--text-dark);
-      background-image: linear-gradient(135deg, rgba(40,40,40,0.3) 25%, transparent 25%),
-                        linear-gradient(225deg, rgba(40,40,40,0.3) 25%, transparent 25%);
+      background-image: 
+        linear-gradient(135deg, rgba(40,40,40,0.3) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(40,40,40,0.3) 25%, transparent 25%);
     }
 
     .container {
       max-width: 720px;
-      margin: 60px auto;
-      padding: 30px;
+      width: 90%;
+      padding: 2.5rem 2rem;
       text-align: center;
     }
 
@@ -56,20 +74,28 @@
       top: 20px;
       background: none;
       border: none;
-      font-size: 1rem;
+      font-size: 1.2rem;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: var(--transition);
       z-index: 1000;
       color: var(--text-light);
+      background-color: rgba(0,0,0,0.1);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     body.dark .toggle-theme,
     body.dark .toggle-music {
       color: var(--text-dark);
+      background-color: rgba(255,255,255,0.1);
     }
 
     .toggle-theme {
-      right: 10px;
+      right: 20px;
     }
 
     .toggle-theme:hover {
@@ -77,43 +103,64 @@
     }
 
     .toggle-music {
-      left: 10px;
+      left: 20px;
     }
 
     .toggle-music:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
 
     img.profile-pic {
-      width: 130px;
-      height: 130px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 15px;
-      border: 3px solid var(--accent);
-      box-shadow: 0 4px 12px var(--shadow);
+      margin-bottom: 1.5rem;
+      border: 4px solid var(--accent);
+      box-shadow: 0 6px 16px var(--shadow);
+      transition: var(--transition);
+      loading: lazy;
+    }
+
+    img.profile-pic:hover {
+      transform: scale(1.05);
     }
 
     h1 {
-      margin: 15px 0 5px;
+      margin: 0.5rem 0;
       font-weight: 700;
-      font-size: 1.8rem;
+      font-size: 2rem;
+      letter-spacing: -0.5px;
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      color: var(--accent);
     }
 
     .bio {
       font-weight: 300;
-      font-size: 1rem;
-      margin-bottom: 25px;
+      font-size: 1.05rem;
+      margin: 1.5rem auto;
       opacity: 0.9;
+      max-width: 80%;
+      line-height: 1.7;
     }
 
-    .contact, .social, .links {
-      margin: 20px 0;
+    .section {
+      margin: var(--section-spacing) 0;
+    }
+
+    .contact {
+      margin: 1.8rem 0;
     }
 
     .contact p {
-      margin: 6px 0;
+      margin: 0.6rem 0;
       font-weight: 300;
+      font-size: 1.05rem;
     }
 
     .copy-btn {
@@ -122,108 +169,294 @@
       color: var(--accent);
       cursor: pointer;
       font-size: 0.85rem;
-      margin-left: 8px;
+      margin-left: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .copy-btn:hover {
+      background-color: rgba(99, 102, 241, 0.1);
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.8rem 0;
     }
 
     .social a {
-      margin: 0 10px;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       color: inherit;
-      transition: color 0.2s;
+      transition: var(--transition);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none !important;
     }
 
     .social a:hover {
       color: var(--accent);
+      background-color: rgba(99, 102, 241, 0.1);
+      transform: translateY(-3px);
     }
 
-    /* Pill-style link buttons */
+    .tech-stack {
+      margin: 2.5rem 0;
+    }
+
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 2.4rem;
+      margin-top: 1.5rem;
+    }
+
+    .icons i {
+      transition: var(--transition);
+    }
+
+    .icons i:hover {
+      transform: scale(1.2);
+      color: var(--accent);
+    }
+
+    .icons a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: center;
+      margin: 2rem 0;
+    }
+
+    .link-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
     .pill-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 10px 22px;
-      margin: 10px 5px;
-      border: 2px solid black;
+      gap: 0.7rem;
+      padding: 0.8rem 1.6rem;
+      border: 2px solid var(--text-light);
       border-radius: 999px;
       background-color: transparent;
-      color: black;
+      color: var(--text-light);
       font-weight: 500;
       text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: var(--transition);
+      font-size: 1rem;
     }
 
     .pill-btn:hover {
       background-color: rgba(0, 0, 0, 0.05);
-      color: black;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     body.dark .pill-btn {
-      border-color: white;
-      color: white;
+      border-color: var(--text-dark);
+      color: var(--text-dark);
     }
 
     body.dark .pill-btn:hover {
       background-color: rgba(255, 255, 255, 0.1);
-      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
     .footer {
-      margin-top: 50px;
-      font-size: 0.8rem;
-      opacity: 0.5;
+      margin-top: 3.5rem;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      letter-spacing: 0.5px;
     }
 
-    @media (max-width: 500px) {
-      .social a {
-        margin: 0 6px;
+    @media (max-width: 600px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+      
+      .bio {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+      
+      .icons {
+        gap: 1.2rem;
+        font-size: 2rem;
       }
 
-      .toggle-theme {
+      .pill-btn {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .pill-btn {
+        padding: 0.6rem 1.1rem;
+        font-size: 0.9rem;
+      }
+
+      .social a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
         font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
-  <button class="toggle-theme" onclick="toggleTheme()">
+  <button class="toggle-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">
     <i class="fas fa-moon"></i>
   </button>
 
-  <button class="toggle-music" onclick="toggleMusic()">
+  <button class="toggle-music" onclick="toggleMusic()" aria-label="Toggle background music">
     <i class="fas fa-volume-up"></i>
   </button>
 
-  <audio id="bg-music" autoplay loop>
+  <audio id="bg-music" loop>
     <source src="forcodespace.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
   </audio>
 
   <div class="container">
-    <img src="forcodespace.jpg" alt="Profile Picture" class="profile-pic" />
+    <img src="forcodespace.jpg" alt="Subash Baniya Profile Picture" class="profile-pic" />
     <h1>forcodespace</h1>
     <p class="bio">Web Developer from Nepal — crafting minimal, user-first web experiences.</p>
 
     <div class="contact">
       <p>+977 9876543210</p>
-      <p><span id="email">forcodespace@gmail.com</span>
-        <button class="copy-btn" onclick="copyEmail()">Copy</button>
+      <p>
+        <span id="email">forcodespace@gmail.com</span>
+        <button class="copy-btn" onclick="copyEmail()" aria-label="Copy email address">Copy</button>
       </p>
     </div>
 
-    <div class="social">
-      <a href="https://threads.net/" target="_blank"><i class="fab fa-threads"></i></a>
-      <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com/in/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/forcodespace" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:forcodespace@gmail.com"><i class="fas fa-envelope"></i></a>
+    <div class="section">
+      <div class="social">
+        <a href="https://threads.net/" target="_blank" rel="noopener noreferrer" aria-label="Threads"><i class="fab fa-threads"></i></a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/forcodespace" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:forcodespace@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
 
-    <!-- Updated Link Buttons -->
-    <div class="links">
-      <a href="https://www.subashbaniya.info.np/" target="_blank" class="pill-btn"><i class="fas fa-globe"></i> Website</a>
-      <a href="https://www.tiktok.com/@forcodespace/" target="_blank" class="pill-btn"><i class="fab fa-tiktok"></i> TikTok</a>
-      <a href="https://www.facebook.com/subashbaniyaa/" target="_blank" class="pill-btn"><i class="fab fa-facebook"></i> Facebook</a>
-      <a href="https://www.instagram.com/subashbaniyaa/" target="_blank" class="pill-btn"><i class="fab fa-instagram"></i> Instagram</a>
+    <div class="section">
+      <h2>Social Links:</h2>
+      <div class="links">
+        <div class="link-row">
+          <a href="https://www.tiktok.com/@forcodespace/" target="_blank" rel="noopener noreferrer" class="pill-btn">
+            <i class="fab fa-tiktok"></i> TikTok
+          </a>
+          <a href="https://www.github.com/forcodespace/" target="_blank" rel="noopener noreferrer" class="pill-btn">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+        
+        <div class="link-row">
+          <a href="https://www.subashbaniya.info.np/" target="_blank" rel="noopener noreferrer" class="pill-btn">
+            <i class="fas fa-globe"></i> Website
+          </a>
+        </div>
+        
+        <div class="link-row">
+          <a href="https://www.facebook.com/subashbaniyaa/" target="_blank" rel="noopener noreferrer" class="pill-btn">
+            <i class="fab fa-facebook"></i> Facebook
+          </a>
+          <a href="https://www.instagram.com/subashbaniyaa/" target="_blank" rel="noopener noreferrer" class="pill-btn">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-stack">
+      <h2>Tech Stack:</h2>
+      <div class="icons">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" title="HTML5">
+          <i class="devicon-html5-plain colored"></i>
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" title="CSS3">
+          <i class="devicon-css3-plain colored"></i>
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" title="JavaScript">
+          <i class="devicon-javascript-plain colored"></i>
+        </a>
+        <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" title="Python">
+          <i class="devicon-python-plain colored"></i>
+        </a>
+        <a href="https://www.java.com/" target="_blank" rel="noopener noreferrer" title="Java">
+          <i class="devicon-java-plain colored"></i>
+        </a>
+        <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" title="React">
+          <i class="devicon-react-original colored"></i>
+        </a>
+        <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" title="Node.js">
+          <i class="devicon-nodejs-plain colored"></i>
+        </a>
+        <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer" title="Express">
+          <i class="devicon-express-original"></i>
+        </a>
+        <a href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer" title="Vite">
+          <i class="devicon-vitejs-plain colored"></i>
+        </a>
+        <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" title="MySQL">
+          <i class="devicon-mysql-plain colored"></i>
+        </a>
+        <a href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer" title="SQLite">
+          <i class="devicon-sqlite-plain colored"></i>
+        </a>
+        <a href="https://www.ruby-lang.org/" target="_blank" rel="noopener noreferrer" title="Ruby">
+          <i class="devicon-ruby-plain colored"></i>
+        </a>
+        <a href="https://isocpp.org/" target="_blank" rel="noopener noreferrer" title="C++">
+          <i class="devicon-cplusplus-plain colored"></i>
+        </a>
+        <a href="https://www.kernel.org/" target="_blank" rel="noopener noreferrer" title="Linux">
+          <i class="devicon-linux-plain colored"></i>
+        </a>
+        <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" title="AWS">
+          <i class="devicon-amazonwebservices-original colored"></i>
+        </a>
+        <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" title="Docker">
+          <i class="devicon-docker-plain colored"></i>
+        </a>
+        <a href="https://kubernetes.io/" target="_blank" rel="noopener noreferrer" title="Kubernetes">
+          <i class="devicon-kubernetes-plain colored"></i>
+        </a>
+        <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" title="Figma">
+          <i class="devicon-figma-plain colored"></i>
+        </a>
+        <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" title="Tailwind CSS">
+          <i class="devicon-tailwindcss-plain colored"></i>
+        </a>
+      </div>
     </div>
 
     <div class="footer">
@@ -232,44 +465,101 @@
   </div>
 
   <script>
+    // Enhanced JavaScript with error handling
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      // Initialize theme
+      initTheme();
+      
+      // Initialize music
+      initMusic();
+    });
+
     function copyEmail() {
-      const email = document.getElementById('email').innerText;
-      navigator.clipboard.writeText(email).then(() => {
-        alert('Email copied to clipboard!');
-      });
+      const email = document.getElementById('email').textContent;
+      navigator.clipboard.writeText(email)
+        .then(() => {
+          const btn = document.querySelector('.copy-btn');
+          btn.textContent = 'Copied!';
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+          }, 2000);
+        })
+        .catch(err => {
+          console.error('Failed to copy email: ', err);
+          alert('Failed to copy email. Please try again or copy manually.');
+        });
+    }
+
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 
+                        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
+        document.querySelector('.toggle-theme i').className = 'fas fa-sun';
+      }
     }
 
     function toggleTheme() {
       document.body.classList.toggle('dark');
       const isDark = document.body.classList.contains('dark');
       const icon = document.querySelector('.toggle-theme i');
-      icon.classList.toggle('fa-sun', isDark);
-      icon.classList.toggle('fa-moon', !isDark);
+      icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
 
     const music = document.getElementById("bg-music");
     const musicIcon = document.querySelector(".toggle-music i");
 
-    function toggleMusic() {
-      if (music.muted) {
-        music.muted = false;
-        musicIcon.classList.replace("fa-volume-mute", "fa-volume-up");
-      } else {
-        music.muted = true;
-        musicIcon.classList.replace("fa-volume-up", "fa-volume-mute");
+    function initMusic() {
+      // Set initial state
+      music.volume = 0.3;
+      music.muted = false;
+      musicIcon.className = 'fas fa-volume-up';
+      
+      // Try to play music (will fail in most browsers due to autoplay policy)
+      const playPromise = music.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Autoplay was prevented, show muted state
+          music.muted = true;
+          musicIcon.className = 'fas fa-volume-mute';
+          console.log("Autoplay prevented, waiting for user interaction");
+        });
       }
     }
 
-    window.onload = () => {
-      const savedTheme = localStorage.getItem('theme');
-      const icon = document.querySelector('.toggle-theme i');
-      if (savedTheme === 'dark') {
-        document.body.classList.add('dark');
-        icon.classList.replace('fa-moon', 'fa-sun');
+    function toggleMusic() {
+      if (music.paused) {
+        music.play()
+          .then(() => {
+            musicIcon.className = 'fas fa-volume-up';
+          })
+          .catch(error => {
+            console.log("Playback failed:", error);
+            // Show user they need to interact first
+            alert("Please click anywhere on the page first to enable audio");
+          });
+      } else {
+        music.pause();
+        musicIcon.className = 'fas fa-volume-mute';
       }
-      document.getElementById('year').textContent = new Date().getFullYear();
-    };
+    }
+
+    // Enable audio after first user interaction
+    document.body.addEventListener('click', function enableAudio() {
+      document.body.removeEventListener('click', enableAudio);
+      
+      if (music.muted) {
+        music.muted = false;
+        musicIcon.className = 'fas fa-volume-up';
+        music.play().catch(e => console.log("Audio play failed:", e));
+      }
+    }, { once: true });
   </script>
 </body>
 </html>
