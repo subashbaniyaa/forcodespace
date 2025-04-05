@@ -4,15 +4,13 @@
   <meta charset="UTF-8" />
   <title>forcodespace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Crafting user-first web experiences." />
+  <meta name="description" content="Subash Baniya – A passionate developer creating innovative web solutions, including APIs and text-to-image services." />
   <meta name="author" content="Subash Baniya" />
-
   <meta property="og:title" content="forcodespace" />
   <meta property="og:description" content="Crafting user-first web experiences." />
   <meta property="og:image" content="https://i.ibb.co/z1kgF6W/481849257-2943868939253544-8815298265069237979-n.jpg" />
   <meta property="og:url" content="https://subashbaniya.info.np/" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <link rel="icon" href="https://i.imgur.com/9GGNGm1.jpeg" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -138,17 +136,35 @@
       color: var(--accent);
     }
 
-    .links a {
-      display: block;
-      margin: 8px 0;
-      font-weight: 400;
+    /* Pill-style link buttons */
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 22px;
+      margin: 10px 5px;
+      border: 2px solid black;
+      border-radius: 999px;
+      background-color: transparent;
+      color: black;
+      font-weight: 500;
       text-decoration: none;
-      color: inherit;
-      transition: color 0.2s;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .links a:hover {
-      color: var(--accent);
+    .pill-btn:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      color: black;
+    }
+
+    body.dark .pill-btn {
+      border-color: white;
+      color: white;
+    }
+
+    body.dark .pill-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
     }
 
     .footer {
@@ -202,11 +218,12 @@
       <a href="mailto:forcodespace@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
 
+    <!-- Updated Link Buttons -->
     <div class="links">
-      <a href="https://www.subashbaniya.info.np/" target="_blank"><i class="fas fa-globe"></i> Website</a>
-      <a href="https://www.tiktok.com/@forcodespace/" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-      <a href="https://www.facebook.com/subashbaniyaa/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-      <a href="https://www.instagram.com/subashbaniyaa/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.subashbaniya.info.np/" target="_blank" class="pill-btn"><i class="fas fa-globe"></i> Website</a>
+      <a href="https://www.tiktok.com/@forcodespace/" target="_blank" class="pill-btn"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="https://www.facebook.com/subashbaniyaa/" target="_blank" class="pill-btn"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="https://www.instagram.com/subashbaniyaa/" target="_blank" class="pill-btn"><i class="fab fa-instagram"></i> Instagram</a>
     </div>
 
     <div class="footer">
@@ -256,4 +273,3 @@
   </script>
 </body>
 </html>
-
