@@ -1,16 +1,259 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <title>forcodespace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Crafting user-first web experiences." />
+  <meta name="author" content="Subash Baniya" />
+
+  <meta property="og:title" content="forcodespace" />
+  <meta property="og:description" content="Crafting user-first web experiences." />
+  <meta property="og:image" content="https://i.ibb.co/z1kgF6W/481849257-2943868939253544-8815298265069237979-n.jpg" />
+  <meta property="og:url" content="https://subashbaniya.info.np/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="https://i.imgur.com/9GGNGm1.jpeg" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --bg-light: #f9f9f9;
+      --text-light: #1a1a1a;
+      --bg-dark: #121212;
+      --text-dark: #f1f1f1;
+      --accent: #6366f1;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      background-image: linear-gradient(135deg, rgba(240,240,240,0.2) 25%, transparent 25%),
+                        linear-gradient(225deg, rgba(240,240,240,0.2) 25%, transparent 25%);
+      background-size: 40px 40px;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+      background-image: linear-gradient(135deg, rgba(40,40,40,0.3) 25%, transparent 25%),
+                        linear-gradient(225deg, rgba(40,40,40,0.3) 25%, transparent 25%);
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .toggle-theme,
+    .toggle-music {
+      position: fixed;
+      top: 20px;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      color: var(--text-light);
+    }
+
+    body.dark .toggle-theme,
+    body.dark .toggle-music {
+      color: var(--text-dark);
+    }
+
+    .toggle-theme {
+      right: 10px;
+    }
+
+    .toggle-theme:hover {
+      transform: rotate(20deg);
+    }
+
+    .toggle-music {
+      left: 10px;
+    }
+
+    .toggle-music:hover {
+      transform: scale(1.2);
+    }
+
+    img.profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid var(--accent);
+      box-shadow: 0 4px 12px var(--shadow);
+    }
+
+    h1 {
+      margin: 15px 0 5px;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    .bio {
+      font-weight: 300;
+      font-size: 1rem;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .contact, .social, .links {
+      margin: 20px 0;
+    }
+
+    .contact p {
+      margin: 6px 0;
+      font-weight: 300;
+    }
+
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--accent);
+      cursor: pointer;
+      font-size: 0.85rem;
+      margin-left: 8px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      font-size: 1.4rem;
+      color: inherit;
+      transition: color 0.2s;
+    }
+
+    .social a:hover {
+      color: var(--accent);
+    }
+
+    .links a {
+      display: block;
+      margin: 8px 0;
+      font-weight: 400;
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
+
+    .links a:hover {
+      color: var(--accent);
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 500px) {
+      .social a {
+        margin: 0 6px;
+      }
+
+      .toggle-theme {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+  <button class="toggle-theme" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+  </button>
 
+  <button class="toggle-music" onclick="toggleMusic()">
+    <i class="fas fa-volume-up"></i>
+  </button>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="forcodespace.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <img src="forcodespace.jpg" alt="Profile Picture" class="profile-pic" />
+    <h1>forcodespace</h1>
+    <p class="bio">Web Developer from Nepal — crafting minimal, user-first web experiences.</p>
+
+    <div class="contact">
+      <p>+977 9876543210</p>
+      <p><span id="email">forcodespace@gmail.com</span>
+        <button class="copy-btn" onclick="copyEmail()">Copy</button>
+      </p>
+    </div>
+
+    <div class="social">
+      <a href="https://threads.net/" target="_blank"><i class="fab fa-threads"></i></a>
+      <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/forcodespace" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:forcodespace@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="links">
+      <a href="https://www.subashbaniya.info.np/" target="_blank"><i class="fas fa-globe"></i> Website</a>
+      <a href="https://www.tiktok.com/@forcodespace/" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="https://www.facebook.com/subashbaniyaa/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="https://www.instagram.com/subashbaniyaa/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+
+    <div class="footer">
+      &copy; <span id="year"></span> forcodespace. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    function copyEmail() {
+      const email = document.getElementById('email').innerText;
+      navigator.clipboard.writeText(email).then(() => {
+        alert('Email copied to clipboard!');
+      });
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      const icon = document.querySelector('.toggle-theme i');
+      icon.classList.toggle('fa-sun', isDark);
+      icon.classList.toggle('fa-moon', !isDark);
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    const music = document.getElementById("bg-music");
+    const musicIcon = document.querySelector(".toggle-music i");
+
+    function toggleMusic() {
+      if (music.muted) {
+        music.muted = false;
+        musicIcon.classList.replace("fa-volume-mute", "fa-volume-up");
+      } else {
+        music.muted = true;
+        musicIcon.classList.replace("fa-volume-up", "fa-volume-mute");
+      }
+    }
+
+    window.onload = () => {
+      const savedTheme = localStorage.getItem('theme');
+      const icon = document.querySelector('.toggle-theme i');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
+        icon.classList.replace('fa-moon', 'fa-sun');
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+    };
+  </script>
+</body>
 </html>
+
