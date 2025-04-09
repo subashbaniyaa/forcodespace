@@ -27,16 +27,29 @@
 ### 📈 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=forcodespace&show_icons=true&hide_border=true&bg_color=00000000&text_color=333" width="400" />
+  <img src="https://github-readme-stats.vercel.app/api?username=forcodespace&show_icons=true&theme=default&hide_border=false&bg_color=00000000&border_color=000000&title_color=000000&text_color=000000" width="400" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=forcodespace&layout=compact&hide_border=true&bg_color=00000000&text_color=333" width="400" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=forcodespace&layout=compact&hide_border=false&bg_color=00000000&border_color=000000&title_color=000000&text_color=000000" width="400" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=forcodespace&hide_border=true&background=FFFFFF00&currStreakLabel=333333&sideNums=333333&dates=333333&sideLabels=333333" width="400"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=forcodespace&theme=default&hide_border=false&background=FFFFFF00&border=000000&ring=000000&fire=000000&currStreakLabel=000000&sideNums=000000&sideLabels=000000&dates=000000" width="400" />
 </p>
 
 ---
 
+### 🏆 Achievements
+
+- 🥇 100+ GitHub contributions in a year
+- 🚀 Built several full-stack apps using **MERN** and **Java**
+- 🧠 Constant learner — always exploring new tech and tools
+- 🎓 Strong foundation in DSA, OOP, and web technologies
+- 🛠️ Open-source contributor and tech community supporter
+
+---
+
+<p align="center">
+  Made with ❤️ by Subash Baniya
+</p>
