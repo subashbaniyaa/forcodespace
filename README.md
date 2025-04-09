@@ -1,12 +1,10 @@
-<h1 align="center">Hi, I'm Subash Baniya 👋</h1>
+<h1 align="center">forcodespace</h1>
 
 <p align="center">
   <a href="https://subashbaniya.info.np" target="_blank">🌐 subashbaniya.info.np</a>
 </p>
 
 ---
-
-### 🧰 Tech Stack
 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="30" height="30"/>
@@ -24,8 +22,6 @@
 
 ---
 
-### 📈 GitHub Stats
-
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=forcodespace&show_icons=true&theme=default&hide_border=false&bg_color=00000000&border_color=000000&title_color=000000&text_color=000000" width="400" />
 </p>
@@ -40,16 +36,7 @@
 
 ---
 
-### 🏆 Achievements
-
-- 🥇 100+ GitHub contributions in a year
-- 🚀 Built several full-stack apps using **MERN** and **Java**
-- 🧠 Constant learner — always exploring new tech and tools
-- 🎓 Strong foundation in DSA, OOP, and web technologies
-- 🛠️ Open-source contributor and tech community supporter
-
----
 
 <p align="center">
-  Made with ❤️ by Subash Baniya
+ forcodespace
 </p>
