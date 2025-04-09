@@ -1,12 +1,10 @@
-<h1 align="center">forcodespace</h1>
+
 
 <p align="center">
   <a href="https://subashbaniya.info.np" target="_blank">🌐 https://subashbaniya.info.np/</a>
 </p>
 
 ---
-
-### 🛠️ Languages & Tools
 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" alt="HTML" width="50" height="50"/>
@@ -23,7 +21,6 @@
 
 ---
 
-### 📊 GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=forcodespace&show_icons=true&hide_border=false&bg_color=0d1117&border_color=ffffff&title_color=ffffff&text_color=ffffff&icon_color=ffffff" width="400" />
